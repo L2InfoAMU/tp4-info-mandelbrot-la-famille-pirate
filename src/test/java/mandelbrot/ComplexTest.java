@@ -168,6 +168,19 @@ public class ComplexTest {
         assertEquals(c1.modulus(), Math.sqrt(c1.squaredModulus()));
 
     }
+    @Test
+    void testPow(){
+        Complex c1 = new Complex(3,5);
+        assertEquals(Complex.ONE, c1.pow(0));
+        assertEquals(new Complex(-16,30), c1.pow(2));
+    }
 
+    @Test
+    void testScale(){
+        Complex c1 = new Complex(5,3);
+        assertEquals(new Complex(4,0), Complex.ONE.scale(4));
+        assertEquals(Complex.ZERO, Complex.ZERO.scale(6));
+        assertEquals(new Complex(15,9), c1.scale(3));
+    }
 }
 
